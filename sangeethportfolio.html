@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            background-color: black;
+            margin: 0; 
+        }
+        #home {
+    width: 100%;
+    float: left;
+    height: 400px; 
+    position: relative;
+    opacity: 1; 
+    display: block;
+    z-index: 1;
+    background-image: url('https://uicookies.com/demo/theme/black/img/slider_1.jpg');
+    background-size: cover; 
+}
+        #home a {
+            position: relative;
+            top: -930px;
+            left: 20%;
+            padding: 20px;
+            font-size: 20px;
+            text-decoration: none;
+            color: gray;
+        }
+        #home a, .socialmedia i:hover{
+            color: aliceblue;
+        }
+        #home h3 {
+            position: relative;
+            color: white; 
+        }
+        .socialmedia i {
+            color: aqua;
+            font-size: 20px;
+            position: relative;
+            top: -950px;
+            left: 1150px;
+            padding: 10px;
+            cursor: pointer;
+        }
+       /* #info {
+            position: absolute;
+            top: 50%;
+            right: 5%;
+            transform: translate(0%, -50%);
+            height: 300px;
+        }*/
+        #name{
+            position: absolute;
+            color: white;
+            top: 20%;
+            right: 60%;
+            font-size: 50px;
+            text-shadow: 2px 2px #ff0000;
+        }
+        #resume{
+            position: absolute;
+            color: black;
+            top: 40%;
+            width: 150px;
+            right: 75%;
+            background-color: aqua;
+        }
+        #desc{
+            position: absolute;
+            color: white;
+            top: 40%;
+            width: 300px;
+            right: 10%;
+            font-size: 20px;
+        }
+        section{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            color: white;
+        }
+        #home{
+            position: relative;
+            height: 100vh;
+            width: 90vw;
+        }
+        #projects {
+            position: relative;
+            top:25vh;
+            margin-top: 100vh; /* Adjust this value based on the height of the home section */
+        }
+        
+        #myimg:hover{
+            box-shadow: 6px 6px 6px 6px aqua;
+        }
+        .card{
+            width: 230px;
+            height: 250px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            left:-580px;
+            top:60px;
+        }
+        .card-img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        .card-body{
+            width: 100%;
+            height: 100%;
+            top:0;
+            right: -100%;
+            position: absolute;
+            background: #1f3d4738;
+            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            color: aliceblue;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            transition: 1s;
+        }
+        .card:hover .card-body{
+            right:0;
+        }
+        .cards{
+            position: relative;
+            left:0px;
+        }
+        .card-title{
+            color: black;
+            font-weight: bold;
+        }
+       a{
+        text-decoration: none;
+        color:white;
+       }
+       .btn2{
+        background-color: skyblue;
+       }
+       .btn2 a{
+        color: black;
+       }
+       #card2{
+        position: absolute;
+        left:-300px;
+       }
+       #card3{
+        position: absolute;
+        left:-10px;
+       }
+       #card4{
+        position: absolute;
+        left:250px;
+       }
+       #card5{
+        position: absolute;
+        left:500px;
+       }
+       .card-info,.card-subtitle{
+        color:black;
+       }
+       #card6{
+        position: absolute;
+        top:400px;
+       }
+       #card7{
+        position: absolute;
+        top:400px;
+        left:20px;
+       }
+       #card7 .card-title .card-subtitle .card-info{
+        color: white;
+       }
+       @keyframes slide{
+        from{
+            left:0px;
+        }
+        to{
+            left:100px;
+        }
+       }
+       #Details{
+            position: relative;
+            top:-350px;
+            margin-top: 80vh;
+       }
+       #Skills{
+            position: relative;
+            top:-550px;
+            margin-top: 80vh;
+       }
+       #Details img{
+        height: 200px;
+        width: 200px;
+        position: absolute;
+        top:100px;
+        left:30px;
+        border-radius: 50%;
+       }
+       table,th,tr,td{
+        padding: 20px;
+        border: 1px solid white;
+       }
+       #Skills{
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+       }
+    input[type=range]{
+        width:300px;
+    }
+    #Skills #skill{
+        position: relative;
+        top:100px;
+        left:-600px;
+    }
+    #skill .bar{
+        margin:40px 0;
+    } 
+    #skill .bar:first-child{
+        margin-bottom: 0;
+    }
+    #skill .bar .info{
+        margin-bottom: 5px;
+    }
+    #skill .bar .info span{
+        font-size: 17px;
+        font-weight: 500;
+        animation: showText 0.5s 1s linear forwards;
+        opacity: 0;
+    }
+    #skill .bar .progress-line {
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    animation: animateProgressBar 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+@keyframes animateProgressBar {
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+#skill .bar .progress-line span {
+    height: 100%;
+    background-color: skyblue;
+    position: absolute;
+    border-radius: 10px;
+    /*animation: animateProgressBar 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;*/
+}
+
+#skill .bar .info span {
+    font-size: 17px;
+    font-weight: 500;
+   /* animation: showText 0.5s 1s linear forwards;
+    opacity: 0;*/
+}
+
+@keyframes showText {
+    to {
+        opacity: 1;
+    }
+}
+.c h5{
+    position: absolute;
+}
+#side-bar {
+    position: fixed;
+    top: 10;
+    left: 0;
+    background-color: black;
+    padding: 20px;
+    color: white;
+    font-size: 18px;
+    width: 60px;
+    z-index: 2;
+    border-top-right-radius: 10px;
+    margin-top: 260px;
+}
+
+#side-bar a {
+    margin-bottom: 10px;
+}
+    </style>
+</head>
+<body>
+    <div class="totalframe">
+        <div id="side-bar">
+            <a href="#home" style="color: aqua;"><i class="bi bi-house-door-fill"></i></a><br>
+            <a href="#projects"><i class="bi bi-file-earmark-ppt-fill"></i></a><br>
+            <a href="#Details"><i class="bi bi-person-fill"></i></a><br>
+            <a href="#Skills"><i class="bi bi-braces"></i></a><br>
+            <a href="#"><i class="bi bi-file-person-fill"></i></a><br>
+            <a href="#"><i class="bi bi-telephone-fill"></i></a>
+        </div>
+        <section id="home">
+            <h3>Sangeeth</h3>
+            <img src="https://uicookies.com/demo/theme/black/img/slider_1.jpg" style="position: relative; height: 900px;">
+            <a href="#home" style="color: aqua;">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#Details">Details</a>
+            <a href="#Skills">Skills</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <div class="socialmedia" style="position: absolute;">
+                <i class="bi bi-facebook"></i>
+                <i class="bi bi-instagram"></i>
+                <i class="bi bi-github"></i>
+                <i class="bi bi-linkedin"></i>
+            </div>
+            <h1 id="name">Hi I'm <br><span class="auto-input" style="color:aqua">Sangeeth Satyada</span></h1>
+            <p id="desc" class="auto-input1"></p>
+            <button type="button" class="btn btn-outline-success" id="resume">Download CV</button>
+        </section>
+        <section id="projects">
+            <center style="position: absolute;height: 50px;width:100vw;border: 1px solid white;background-color: black;"><h1>PROJECTS</h1></center>
+           <!--- <img src="https://previews.123rf.com/images/sdecoret/sdecoret1711/sdecoret171100544/89763939-hand-drawn-project-presentation-on-black-background.jpg" style="position: relative; height: 900px;">-->
+           <div class="cards">
+            <div class="card">
+                <img src="https://www.tradeindia.com/_next/image/?url=https%3A%2F%2Ftiimg.tistatic.com%2Ffp%2F2%2F004%2F980%2Faffordable-e-commerce-website-service-655.jpg&w=384&q=75">
+                <div class="card-body">
+                    <h6 class="card-title">shopping website</h6>
+                    <p class="card-subtitle">Web Development</p>
+                    <p class="card-info">Access Using</p>
+                    <button type="button" class="btn btn-success" class="btn1"><a href="https://github.com/sangeethsatyada/DIGIBHEM.git">Git Repo</a></button><br>
+                    <button class="btn2"><a href="https://sangeethsatyada.github.io/DIGIBHEM/">Live link</a></button>
+                </div>
+            </div>
+
+            <div class="card" id="card2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTUN3w0P4IA0x2x1QQBeBiiYb17T-fvomTBQ&usqp=CAU">
+                <div class="card-body">
+                    <h6 class="card-title">Calculator</h6>
+                    <p class="card-subtitle">React App</p>
+                    <p class="card-info">Access Using</p>
+                    <button type="button" class="btn btn-success" class="btn1"><a href="https://github.com/sangeethsatyada/React.git">Git Repo</a></button><br>
+                    <button class="btn2"><a href="https://github.com/sangeethsatyada/React.git">Some More</a></button>
+                </div>
+            </div>
+
+            <div class="card" id="card3">
+                <img src="https://images.meesho.com/images/products/179759755/bgmyt_512.webp">
+                <div class="card-body">
+                    <h6 class="card-title">FastFood</h6>
+                    <p class="card-subtitle">Restaurent Website</p>
+                    <p class="card-info">Access Using</p>
+                    <button type="button" class="btn btn-success" class="btn1"><a href="https://github.com/sangeethsatyada/frontend.git">Git Repo</a></button><br>
+                    <button class="btn2"><a href="https://sangeethsatyada.github.io/frontend/">Live link</a></button>
+                </div>
+            </div>
+
+            <div class="card" id="card4">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTm54uFzyCtnXaLJfZvYT9SRZ4Kw84rPfv9A&usqp=CAU">
+                <div class="card-body">
+                    <h6 class="card-title">Library</h6>
+                    <p class="card-subtitle">JAVA</p>
+                    <p class="card-info">Access Using</p>
+                    <button type="button" class="btn btn-success" class="btn1"><a href="https://github.com/sangeethsatyada/java.git">Git Repo</a></button><br>
+                </div>
+            </div>
+
+            <div class="card" id="card5">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSS6RsB1m1RcoPzQFgL-FIK5oXTHzHTkFIp8A&usqp=CAU">
+                <div class="card-body">
+                    <h6 class="card-title">User Reg and Login</h6>
+                    <p class="card-subtitle">FULLSTACK</p>
+                    <p class="card-info">Access Using</p>
+                    <button type="button" class="btn btn-success" class="btn1"><a href="https://github.com/sangeethsatyada/Fullstack.git">Git Repo</a></button><br>
+                </div>
+            </div>
+
+            <div class="card" id="card6">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfJoT2unrxRBglXmeEGX_RDJ-6XpXSLj-WTA&usqp=CAU">
+                <div class="card-body">
+                    <h6 class="card-title">ATM</h6>
+                    <p class="card-subtitle">JAVA SWING</p>
+                    <p class="card-info">Access Using</p>
+                    <button type="button" class="btn btn-success" class="btn1"><a href="https://github.com/sangeethsatyada/java-swing.git">Git Repo</a></button><br>
+                </div>
+            </div>
+
+            <div class="card" id="card7">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-IObJvG0p3_uTOtls8rJmm7sEmqLVhp2qcg&usqp=CAU">
+                <div class="card-body">
+                    <h6 class="card-title">STOPWATCH</h6>
+                    <p class="card-subtitle">FRONT END</p>
+                    <p class="card-info">Access Using</p>
+                    <button type="button" class="btn btn-success" class="btn1"><a href="https://github.com/sangeethsatyada/React/tree/main/time">Git Repo</a></button><br>
+                </div>
+            </div>
+
+            <h3 style="position:absolute;top:660px;width:600px;animation-name: slide;animation-duration: 1s;animation-iteration-count: infinite;"><i class="bi bi-arrow-right"></i>Access some more projects <a href="https://github.com/sangeethsatyada" style="color:green">Click Here</a></h3>
+           </div>
+        </section>
+        <section id="Details">
+            <header style="color: white;"><h3>DETAILS</h3></header>
+            <img src="https://media.licdn.com/dms/image/D5603AQFnsORY6Pd8VA/profile-displayphoto-shrink_800_800/0/1688997653976?e=2147483647&v=beta&t=9k2O35QD833cMuTK3PEEaP-CgfNF3UYEbFkpXdbTzrI">
+            <pre style="position: absolute;top:100px;left:450px">
+                Name          : Satyada Sangeeth Raju 
+                Location      : 10-1-50(1),Ratnalapalem(v),kotauratla(M)
+                              Anakapalli(D),Andhrapradesh(S),pin:531085
+                Educational 
+                Qualifications:<table border=1/10px>
+                               <tr >
+                                <th>S.NO</th>
+                                <th>Qualification</th>
+                                <th>Institution</th>
+                                <th>Passing Year</th>
+                                <th>Board/University</th>
+                                <th>CGPA</th>
+                                </tr>
+                                <tr>
+                                <td>1</td>
+                                <td>B.Tech(CSE)</td>
+                                <td>Raghu Engineering College</td>
+                                <td>2024</td>
+                                <td>JNTUK</td>
+                                <td>8.04</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Intermediate</td>
+                                    <td>Govt Jr college</td>
+                                    <td>2020</td>
+                                    <td>BIEAP</td>
+                                    <td>8.11</td>
+                                </tr>
+                                <td>3</td>
+                                <td>SSC</td>
+                                <td>Govt high school</td>
+                                <td>2018</td>
+                                <td>BSEAP</td>
+                                <td>8.3</td>
+                                </table>
+                Tecgnical Skills: C,C++,PYTHON,JAVA,FULLSTACK(HTML,CSS,JS,REACT,BOOTSTRAP,NODE.JS,SQL,PHP)
+                Hobbies         : Gathering information about space,Reading fiction and non-diction books,Playing Football
+            </pre>
+        </section>
+        <section id="Skills">
+            <h3><center> My <span class="auto-input3" style="color:aqua">Skills</span></center></h3><br>
+            <div id="skill"><br>
+                <div id="programming-languages">
+                    <h4>Programming languages</h4>
+                <div class="c">
+                    <h5>C</h5>
+                    <input type="range" value="85"/><h6>85</h6>
+                </div>
+                <div class="c">
+                    <h5>C++</h5>
+                    <input type="range" value="80"/><h6>80</h6>
+                </div>
+                <div class="c">
+                    <h5>Python</h5>
+                    <input type="range" value="75"/><h6>75</h6>
+                </div>
+                <div class="c">
+                    <h5>JAVA</h5>
+                    <input type="range" value="80"/><h6>80</h6>
+                </div>
+            </div>
+            <div id="web-development" style="position: absolute;left:400px;top:42px">
+                <h4>Web development</h4>
+                <h6>Front end</h6>
+                <div class="c">
+                    <h5>HTML</h5>
+                    <input type="range" value="90"/><h6>90</h6>
+                    <h5>CSS</h5>
+                    <input type="range" value="70"/><h6>70</h6>
+                    <h5>JAVASCRIPT</h5>
+                    <input type="range" value="70"/><h6>70</h6>
+                    <h5>BOOTSTRAP</h5>
+                    <input type="range" value="70"/><h6>70</h6>
+                    <h5>React.JS</h5>
+                    <input type="range" value="70"/><h6>70</h6>
+                </div>
+            </div>
+            <div id="web-development" style="position: absolute;left:750px;top:42px">
+                <h4>Web development</h4>
+                <h6>Back end</h6>
+                <div class="c">
+                    <h5>Node.js</h5>
+                    <input type="range" value="90"/><h6>90</h6>
+                    <h5>SQL</h5>
+                    <input type="range" value="70"/><h6>70</h6>
+                    <h5>MONGODB(NO-SQL)</h5>
+                    <input type="range" value="70"/><h6>70</h6>
+                    <h5>PHP</h5>
+                    <input type="range" value="70"/><h6>70</h6>
+                </div>
+            </div>
+            <div id="web-development" style="position: absolute;left:1100px;top:42px">
+                <h4>Version Control</h4>
+                <div class="c">
+                    <h5>Git & Github</h5>
+                    <input type="range" value="90"/><h6>90</h6>
+                    <h5>Self Learning ability</h5>
+                    <input type="range" value="90"/><h6>90</h6>
+                </div>
+            </div>
+            </div>
+        </section>
+        <section id="About"></section>
+        <section id="Contact"></section>
+    </div>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed=new Typed(".auto-input",{
+            strings:["Sangeeth Satyada","Fullstack Developer","JAVA developer"],
+            typeSpeed:100,
+            backSpeed:100,
+            loop:true
+        })
+        var typed=new Typed(".auto-input1",{
+            strings:["Ready to turn your ideas into reality?","Let's collaborate and bring your projects to life! ","Whether it's a website, application, or any creative endeavor, I'm here to help.","Contact me today, and let's make something amazing together.","Your project deserves the attention it needs, and I'm excited to be a part of it!"],
+            typeSpeed:0,
+            backSpeed:10,
+            loop:true
+        })
+       
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>
