@@ -19,9 +19,6 @@
     position: relative;
     opacity: 1; 
     display: block;
-    z-index: 1;
-    background-image: url('https://uicookies.com/demo/theme/black/img/slider_1.jpg');
-    background-size: cover; 
 }
         #home a {
             position: relative;
@@ -32,29 +29,23 @@
             text-decoration: none;
             color: gray;
         }
-        #home a, .socialmedia i:hover{
+        #home a, .socialmedia a:hover{
             color: aliceblue;
         }
         #home h3 {
             position: relative;
             color: white; 
         }
-        .socialmedia i {
+        #home .socialmedia a {
+            position: absolute;
             color: aqua;
-            font-size: 20px;
+            font-size: 25px;
             position: relative;
             top: -950px;
-            left: 1150px;
+            left: 1230px;
             padding: 10px;
             cursor: pointer;
         }
-       /* #info {
-            position: absolute;
-            top: 50%;
-            right: 5%;
-            transform: translate(0%, -50%);
-            height: 300px;
-        }*/
         #name{
             position: absolute;
             color: white;
@@ -63,21 +54,27 @@
             font-size: 50px;
             text-shadow: 2px 2px #ff0000;
         }
-        #resume{
+        #resume #resume2{
             position: absolute;
             color: black;
             top: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 150px;
+            height: 20px;
             right: 75%;
             background-color: aqua;
+            border-radius: 30px;
         }
         #desc{
             position: absolute;
             color: white;
             top: 40%;
             width: 300px;
-            right: 10%;
+            right: 70%;
             font-size: 20px;
+            top:400px;
         }
         section{
             height: 100vh;
@@ -85,18 +82,19 @@
             display: flex;
             justify-content: center;
             color: white;
+            background-size: cover;
         }
         #home{
             position: relative;
             height: 100vh;
             width: 90vw;
+            top:-60px;
         }
         #projects {
             position: relative;
-            top:25vh;
+            top:23vh;
             margin-top: 100vh; /* Adjust this value based on the height of the home section */
         }
-        
         #myimg:hover{
             box-shadow: 6px 6px 6px 6px aqua;
         }
@@ -197,7 +195,7 @@
        }
        #Skills{
             position: relative;
-            top:-550px;
+            top:-980px;
             margin-top: 80vh;
        }
        #Details img{
@@ -262,16 +260,11 @@
     background-color: skyblue;
     position: absolute;
     border-radius: 10px;
-    /*animation: animateProgressBar 1s cubic-bezier(1, 0, 0.5, 1) forwards;
-    transform: scaleX(0);
-    transform-origin: left;*/
 }
 
 #skill .bar .info span {
     font-size: 17px;
     font-weight: 500;
-   /* animation: showText 0.5s 1s linear forwards;
-    opacity: 0;*/
 }
 
 @keyframes showText {
@@ -294,43 +287,113 @@
     z-index: 2;
     border-top-right-radius: 10px;
     margin-top: 260px;
+    box-shadow: 0px 3px 6px 3px white;
 }
 
 #side-bar a {
     margin-bottom: 10px;
+}
+#cert img{
+    cursor: pointer;
+    box-shadow: 6px 6px 6px 6px rgb(5, 0, 0);
+}
+
+#home a:hover{
+   background-color: black;
+}
+#contact-sidebar{
+    position: relative;
+    top:200px;
+    left:-300px;
+    height: 600px;
+    width: 400px;
+}
+#contact-form form{
+    position: relative;
+    top:200px;
+}
+#contact-form form input {
+  padding: 5px;
+  width: 400px;
+  background-color: gray;
+  color: black;
+  margin: 10px;
+  border-radius: 10px;
+}
+#contact-form textarea{
+    padding: 5px;
+  width: 400px;
+  background-color: gray;
+  color: white;
+  margin: 10px;
+  border-radius: 10px;
+  height: 200px;
+}
+#contact-form button{
+padding: 5px;
+  width: 400px;
+  background-color: blueviolet;
+  color: white;
+  margin: 10px;
+  border-radius: 10px;
+}
+::placeholder{
+    color: rgb(5, 0, 0);
+}
+#so i{
+    padding: 5px;
+    font-size: 30px;
+}
+#so i:hover{
+    color: skyblue;
+}
+#home #im{
+    z-index: 1;
+    position: relative;
+    height: 100px;
+    top:40px;
+}
+#mine{
+    position: relative;
+    z-index: 1;
+    top:-900px;
+    height: 400px;
+    left:1000px;
+    box-shadow: 6px 6px 6px 6px;
 }
     </style>
 </head>
 <body>
     <div class="totalframe">
         <div id="side-bar">
-            <a href="#home" style="color: aqua;"><i class="bi bi-house-door-fill"></i></a><br>
-            <a href="#projects"><i class="bi bi-file-earmark-ppt-fill"></i></a><br>
-            <a href="#Details"><i class="bi bi-person-fill"></i></a><br>
-            <a href="#Skills"><i class="bi bi-braces"></i></a><br>
-            <a href="#"><i class="bi bi-file-person-fill"></i></a><br>
-            <a href="#"><i class="bi bi-telephone-fill"></i></a>
+            <a href="#home" style="color: aqua;" onclick="change(this)"><i class="bi bi-house-door-fill"></i></a><br>
+            <a href="#projects" onclick="change(this)"><i class="bi bi-file-earmark-ppt-fill"></i></a><br>
+            <a href="#Details" onclick="change(this)"><i class="bi bi-person-fill"></i></a><br>
+            <a href="#Skills" onclick="change(this)"><i class="bi bi-braces"></i></a><br>
+            <a href="#Certifications" onclick="change(this)"><i class="bi bi-patch-check-fill"></i></a><br>
+            <a href="#Contact" onclick="change(this)"><i class="bi bi-telephone-fill"></i></a>
         </div>
         <section id="home">
-            <h3>Sangeeth</h3>
-            <img src="https://uicookies.com/demo/theme/black/img/slider_1.jpg" style="position: relative; height: 900px;">
-            <a href="#home" style="color: aqua;">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#Details">Details</a>
-            <a href="#Skills">Skills</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-            <div class="socialmedia" style="position: absolute;">
-                <i class="bi bi-facebook"></i>
-                <i class="bi bi-instagram"></i>
-                <i class="bi bi-github"></i>
-                <i class="bi bi-linkedin"></i>
+            <img src="https://i.postimg.cc/DwBCx99q/original-7cae847c991bf13f0b6f4725206ce6ff-removebg-preview.png" id="im"/>
+            <img src="https://uicookies.com/demo/theme/black/img/slider_1.jpg" style="position: relative; height: 900px;top:-40px;left:1px;width: 1600px;">
+            <a href="#home" style="color: aqua;" onclick="change(this)">Home</a>
+            <a href="#projects" onclick="change(this)">Projects</a>
+            <a href="#Details" onclick="change(this)">Details</a>
+            <a href="#Skills" onclick="change(this)">Skills</a>
+            <a href="#Certifications" onclick="change(this)">Certifications</a>
+            <a href="#Contact" onclick="change(this)">Contact</a>
+            <div class="socialmedia">
+                <a href="https://www.facebook.com/profile.php?id=100079005524941&mibextid=9R9pXO"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/sangeeth_satyada_?igsh=bGd2amFzbWc0NzYx"><i class="bi bi-instagram"></i></a>
+                <a href="https://github.com/sangeethsatyada"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/sangeeth-satyada-03a416232?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
             </div>
+            <img src="https://i.postimg.cc/QNnk44xY/Whats-App-Image-2024-01-26-at-22-29-56.png" id="mine" alt="Mine ID Image"/>
             <h1 id="name">Hi I'm <br><span class="auto-input" style="color:aqua">Sangeeth Satyada</span></h1>
             <p id="desc" class="auto-input1"></p>
-            <button type="button" class="btn btn-outline-success" id="resume">Download CV</button>
+            <button type="button" class="btn btn-outline-success" id="resume"><a href="https://drive.google.com/file/d/1hohwP-4N9gqSf_8E8nyV_s6cWzB_vYew/view?usp=sharing" id="resume2" >Resume</a></button>
         </section>
-        <section id="projects">
+        <section id="projects" style="background-image: url('https://i.pinimg.com/originals/fc/0b/ca/fc0bca765c94a813eb8797590f21b2f0.jpg');">
             <center style="position: absolute;height: 50px;width:100vw;border: 1px solid white;background-color: black;"><h1>PROJECTS</h1></center>
            <!--- <img src="https://previews.123rf.com/images/sdecoret/sdecoret1711/sdecoret171100544/89763939-hand-drawn-project-presentation-on-black-background.jpg" style="position: relative; height: 900px;">-->
            <div class="cards">
@@ -410,7 +473,7 @@
             <h3 style="position:absolute;top:660px;width:600px;animation-name: slide;animation-duration: 1s;animation-iteration-count: infinite;"><i class="bi bi-arrow-right"></i>Access some more projects <a href="https://github.com/sangeethsatyada" style="color:green">Click Here</a></h3>
            </div>
         </section>
-        <section id="Details">
+        <section id="Details" style="background-image: url('https://i.pinimg.com/originals/fc/0b/ca/fc0bca765c94a813eb8797590f21b2f0.jpg');">
             <header style="color: white;"><h3>DETAILS</h3></header>
             <img src="https://media.licdn.com/dms/image/D5603AQFnsORY6Pd8VA/profile-displayphoto-shrink_800_800/0/1688997653976?e=2147483647&v=beta&t=9k2O35QD833cMuTK3PEEaP-CgfNF3UYEbFkpXdbTzrI">
             <pre style="position: absolute;top:100px;left:450px">
@@ -454,7 +517,7 @@
                 Hobbies         : Gathering information about space,Reading fiction and non-diction books,Playing Football
             </pre>
         </section>
-        <section id="Skills">
+        <section id="Skills" style="background-image: url('https://i.pinimg.com/originals/fc/0b/ca/fc0bca765c94a813eb8797590f21b2f0.jpg');">
             <h3><center> My <span class="auto-input3" style="color:aqua">Skills</span></center></h3><br>
             <div id="skill"><br>
                 <div id="programming-languages">
@@ -517,8 +580,48 @@
             </div>
             </div>
         </section>
-        <section id="About"></section>
-        <section id="Contact"></section>
+        <section id="Certifications" style="background-image: url('https://i.pinimg.com/originals/fc/0b/ca/fc0bca765c94a813eb8797590f21b2f0.jpg');position: relative;top:-900px">
+            <div id="cert">
+                <img src="https://i.postimg.cc/9F79tC9g/elewayte.jpg" alt="no image" height="200px" style="position: relative;left:100px;margin-top:20px;" onclick="imgexpand(this)" title="Click to expand"/>
+                <img src="https://i.postimg.cc/NFsJBg1s/Whats-App-Image-2024-01-24-at-14-54-43.jpg" alt="no image" height="200px" style="position: relative;left:150px;margin-top:20px;" onclick="imgexpand(this)" title="Click to expand"/>
+                <img src="https://i.postimg.cc/SNX5sxBR/Whats-App-Image-2024-01-24-at-14-54-46.jpg" alt="no image" height="200px" style="position: relative;left:200px;margin-top:20px;" onclick="imgexpand(this)" title="Click to expand"/>
+                <img src="https://i.postimg.cc/NfjHSmZV/Whats-App-Image-2024-01-24-at-14-54-47.jpg" alt="no image" height="200px" style="position: relative;left:250px;margin-top:20px;" onclick="imgexpand(this)" title="Click to expand"/>
+                <img src="https://i.postimg.cc/PJfMw2VT/Whats-App-Image-2024-01-24-at-14-54-47-1.jpg" alt="no image" height="200px" style="position: relative;left:-970px;margin-top:20px;top:250px;" onclick="imgexpand(this)" title="Click to expand"/>
+                <img src="https://i.postimg.cc/N0JXnBdq/Whats-App-Image-2024-01-24-at-14-54-47-2.jpg" alt="no image" height="200px" style="position: relative;left:400px;top:50px;" onclick="imgexpand(this)" title="Click to expand"/>
+                <img src="https://i.postimg.cc/pLxJCv9t/Whats-App-Image-2024-01-24-at-20-10-05.jpg" alt="no image" height="200px" style="position: relative;left:450px;top:50px;" onclick="imgexpand(this)" title="Click to expand"/>
+                <img src="https://i.postimg.cc/J0NBHy5H/Whats-App-Image-2024-01-24-at-15-45-41.jpg" alt="no image" height="200px" style="position: relative;left:500px;top:50px;" onclick="imgexpand(this)" title="Click to expand"/>
+                <img src="https://i.postimg.cc/d36VKG96/Whats-App-Image-2024-01-24-at-14-54-42.jpg" alt="no image" height="200px" style="position: relative;left:-850px;top:300px;" onclick="imgexpand(this)" title="Click to expand"/>
+                <img src="https://i.postimg.cc/jdkRQx3D/Whats-App-Image-2024-01-24-at-14-54-42-1.jpg" alt="no image" height="200px" style="position: relative;left:-850px;top:300px;" onclick="imgexpand(this)" title="Click to expand"/>
+                <img src="https://i.postimg.cc/C5Q9D1MY/Whats-App-Image-2024-01-24-at-14-54-46-1.jpg" alt="no image" height="200px" style="position: relative;left:-850px;top:300px;" onclick="imgexpand(this)" title="Click to expand"/>
+                <img src="https://i.postimg.cc/XYmFh0qJ/Whats-App-Image-2024-01-24-at-15-45-41-1.jpg" alt="no image" height="200px" style="position: relative;left:-850px;top:300px;" onclick="imgexpand(this)" title="Click to expand"/>
+                <img src="https://i.postimg.cc/L6s18sZ5/Whats-App-Image-2024-01-24-at-11-49-34.jpg" alt="no image" height="200px" style="position: relative;left:670px;top:100px;" onclick="imgexpand(this)" title="Click to expand"/>
+                <img src="https://i.postimg.cc/DfRT8jSG/Whats-App-Image-2024-01-24-at-14-54-46-2.jpg" alt="no image" height="200px" style="position: relative;left:670px;top:100px;" onclick="imgexpand(this)" title="Click to expand"/>
+            </div>
+        </section>
+        <section id="Contact" style="background-image: url('https://i.pinimg.com/originals/fc/0b/ca/fc0bca765c94a813eb8797590f21b2f0.jpg');position: relative;top:-880px">
+            <center style="position: relative;left:400px;"><b><h2>CONTACT<span style="color: skyblue;"> ME</span></h2></b></center>
+            <div id="contact-sidebar">
+                <h3 style="color:aqua">Let's work together.....!</h3>
+                <h6>Greetings! 👋 I'm Sangeeth satyada, a passionate Fullstack Developer with a knack for crafting seamless digital experiences from top to bottom. With a dynamic skill set that spans both frontend and backend technologies, I bring a holistic approach to web development.</h6>
+                <i class="bi bi-envelope-at-fill" style="color: skyblue;font-size: 25px;"></i>  satyadasangeethraj@gmail.com<br>
+                <i class="bi bi-phone-fill" style="color: skyblue;font-size: 25px;"></i>+911234567890
+                <div id="so">
+                <a href="https://www.facebook.com/profile.php?id=100079005524941&mibextid=9R9pXO"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/sangeeth_satyada_?igsh=bGd2amFzbWc0NzYx"><i class="bi bi-instagram"></i></a>
+                <a href="https://github.com/sangeethsatyada"><i class="bi bi-github"></i></a>
+                <a href="https://www.linkedin.com/in/sangeeth-satyada-03a416232?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+            <div id="contact-form">
+                <form>
+                    <input type="text" placeholder="Enter Name" /><br>
+                    <input type="text" placeholder="Enter Email" /><br>
+                    <input type="text" placeholder="Enter Subject" /><br>
+                    <textarea placeholder="Enter message"></textarea><br>
+                    <button>Submit</button>
+                </form>
+            </div>
+        </section>
     </div>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
@@ -534,7 +637,41 @@
             backSpeed:10,
             loop:true
         })
-       
+        function imgexpand(img){
+            var allImages = document.querySelectorAll("#cert img");
+        allImages.forEach(function (image) {
+            image.setAttribute("hidden",true);
+        });
+            let place=document.getElementById("cert");
+            let i=document.createElement("img");
+            let s=img.src;
+            i.setAttribute("src",s);
+            console.log(i);
+            
+            place.appendChild(i);
+            i.addEventListener('click',()=>{
+                var allImages = document.querySelectorAll("#cert img");
+                i.removeAttribute("src");
+        allImages.forEach(function (image) {
+            image.removeAttribute("hidden");
+        });
+            });
+            
+        }
+        let activeAnchor = null;
+
+        function change(anchor) {
+            if (activeAnchor) {
+                activeAnchor.style.color = "";
+            }
+
+            if (activeAnchor !== anchor) {
+                anchor.style.color = "aqua";
+                activeAnchor = anchor;
+             } else {
+                activeAnchor = null;
+                }
+        }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
